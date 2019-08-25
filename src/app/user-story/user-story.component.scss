@@ -1,7 +1,93 @@
+@import '../app-theme.scss';
 .story-container {
     display: flex;
+    margin-top: 10px;
 
     .metadata, .requirements{
-        margin: 0 15px;
+        width: 50%;
+    }
+
+    .metadata{
+        margin-right: 30px;
+        border: 1px solid #ddd;
+        .title{
+            color: #333;
+            background-color: #f5f5f5;
+            border-color: #ddd;
+            padding: 10px 15px;
+        }
+
+        .workflow{
+            background-color: #f8f8f8;
+            border-color: #e7e7e7;
+            padding: 15px;
+        }
+
+        .body{
+
+            .flex-container{
+                display: flex;
+                text-transform: capitalize;
+                margin-bottom: 15px;
+
+                p:first-child{
+                    flex: 1.5;
+                    text-align: right;
+                    font-weight: bold;
+                    padding-right: 15px;
+                }
+
+                p:last-child{
+                    flex: 3.5;
+                }
+            }
+        }
+    }
+
+    .requirements{
+        border: 1px solid $appIndigo;
+
+        .title{
+            color: #fff;
+            background-color: $appIndigo;
+            padding: 10px 15px;
+        }
+        
+        .body{
+            padding: 15px;
+
+            .create-new{
+                padding: 15px;
+                border: 1px solid $appIndigo;
+                border-radius: 4px;
+                display: flex;
+                flex-direction: column;
+
+               form{
+                   margin: 10px 0;
+                   display: flex;
+                   align-items: center;
+
+                   label{
+                       font-weight: bold;
+                       margin-right: 10px;
+                   }
+
+                   input{
+                       flex: 1;
+                       padding: 6px 12px;
+                   }
+               }
+
+               .button-holder{
+                   text-align: right;
+               }
+            }
+
+            .search-container{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
     }
 }

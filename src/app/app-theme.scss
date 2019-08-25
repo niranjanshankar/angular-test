@@ -1,0 +1,11 @@
+$appIndigo: #337ab7;
+
+.app-btn {
+    color: #ffffff;
+    background: $appIndigo;
+    padding: 6px 12px;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+}

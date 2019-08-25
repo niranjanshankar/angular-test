@@ -1,6 +1,61 @@
-<h1 class="page-title">View a User Story</h1>
-<p>The details of the User Story are displayed below.</p>
-<section class="story-container">
-  <div class="metadata">Metadata card</div>
-  <div class="requirements">Requirements card</div>
-</section>
+<div class="user-story-wrapper" *ngIf="(userStory$ | async) as userStory">
+  <h1 class="page-title">View a User Story</h1>
+  <p>The details of the User Story are displayed below.</p>
+  <section class="story-container">
+
+    <!-- this could be improved by retrieving all Object.keys also dynamically -->
+    <div class="metadata">
+      <div class="title">User Story</div>
+      <div class="workflow">workflow ({{userStory.status}}):</div>
+      <div class="body">
+        <div class="flex-container">
+          <p>Name:</p>
+          <p>{{userStory.name}}</p>
+        </div>
+        <div class="flex-container">
+          <p>Description:</p>
+          <p>{{userStory.description}}</p>
+        </div>
+        <div class="flex-container">
+          <p>Category:</p>
+          <p>{{userStory.category}}</p>
+        </div>
+        <div class="flex-container">
+          <p>Sub-Category:</p>
+          <p>{{userStory.subCategory}}</p>
+        </div>
+        <div class="flex-container">
+          <p>Estimated Start Date:</p>
+          <p>{{userStory.estimatedStartDate}}</p>
+        </div>
+        <div class="flex-container">
+          <p>Sponsor's Email:</p>
+          <p>{{userStory.sponsorEmail}}</p>
+        </div>
+        <div class="flex-container">
+            <p>Complexity:</p>
+            <p>{{userStory.complexity}}</p>
+          </div>
+      </div>
+    </div>
+    <div class="requirements">
+        <div class="title">Requirements</div>
+        <div class="body">
+          <div class="create-new">
+            <p>Use the input field below to create a new Requirement.</p>
+            <form>
+              <label for="req-name">Requirement</label>
+              <input type="text" id="req-name" placeholder="Enter Requirement">
+            </form>
+            <div class="button-holder">
+                <button class="app-btn">Create</button>
+            </div>
+          </div>
+
+          <div class="search-container">
+            <div></div>
+          </div>
+        </div>
+    </div>
+  </section>
+</div>
