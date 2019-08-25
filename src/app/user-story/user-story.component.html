@@ -53,8 +53,22 @@
           </div>
 
           <div class="search-container">
-            <div></div>
+            <div class="dropdown">Show 10 entries</div>
+            <form>
+              <label for="search">Search:</label>
+              <input type="text" id="search"/>
+            </form>
           </div>
+
+          <p class="description">The table below displays a list of requirements for this User Story.</p>
+
+          <ul>
+            <li class="heading">Requirement</li>
+            <li *ngFor="let requirements of userStory.requirement">
+              <span>{{requirements.name}}</span>
+              <span class="delete">Delete</span>
+            </li>
+          </ul>
         </div>
     </div>
   </section>

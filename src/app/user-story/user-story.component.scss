@@ -85,8 +85,52 @@
             }
 
             .search-container{
+                margin: 20px 0px;
                 display: flex;
                 justify-content: space-between;
+
+                .dropdown{
+                    font-weight: bold;
+                }
+
+                form{
+                    label{
+                        margin-right: 5px;
+                    }
+                }
+
+            }
+
+            p.description{
+                margin: 10px 0;
+            }
+
+            ul{
+                // hack due to time constraint. TO DO: Fix with clean CSS
+                margin-left: -40px !important;
+                li{
+                    text-transform: capitalize;
+                    padding: 10px;
+                    list-style-type: none;
+                    border-bottom: 1px solid #ddd;
+                    display: flex;
+                    justify-content: space-between;
+
+                    &.heading{
+                        font-weight: bold;
+                    }
+
+                    &:first-child, &:last-child{
+                        border-bottom: 1px solid #000000;
+
+                    }
+
+                    spa.delete {
+                        font-size: 12px;
+                    }
+
+
+                }
             }
         }
     }
