@@ -5,9 +5,9 @@ export interface UserStory {
     description: string;
     category: string;
     subCategory: string;
-    estimatedStartDate: Date;
-    email: string;
-    complexity: string;
+    estimatedStartDate: string;
+    sponsorEmail: string;
+    complexity: 'easy' | 'medium' | 'difficult';
     requirement: Requirement[];
-    status: string;
+    status: 'open' | 'closed' | 'in progress' | 'to do';
 }
