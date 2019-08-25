@@ -9,8 +9,8 @@ export default {
     sponsorEmail: 'flexx@gmail.com',
     complexity: 'medium',
     requirement: [
-      {id: 1, name: 'ABC'},
-      {id: 2, name: 'DEF'},
+      {id: 0, name: 'ABC'},
+      {id: 1, name: 'DEF'},
     ],
     status: 'open'
 } as UserStory;

@@ -125,8 +125,15 @@
 
                     }
 
-                    spa.delete {
+                    span.delete {
                         font-size: 12px;
+                        cursor: pointer;
+                        padding: 3px;
+
+                        &:hover{
+                            background: red;
+                            color: #ffffff;
+                        }
                     }
 
 

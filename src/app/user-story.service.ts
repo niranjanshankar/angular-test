@@ -13,8 +13,8 @@ export class UserStoryService {
   private userStory$: BehaviorSubject<UserStory> = new BehaviorSubject(null);
   public userStory: Observable<UserStory>;
   constructor() {
-    this.set();
-   }
+    this.set(this.userStoryData);
+  }
 
 
   public getUserStoryObservable(): Observable<UserStory> {
@@ -26,7 +26,27 @@ export class UserStoryService {
     return this.userStory$.getValue();
   }
 
-  set(): void {
-    this.userStory$.next({...this.userStoryData});
+  set(userStoryData: UserStory): void {
+    this.userStoryData = userStoryData;
+    this.userStory$.next({ ...this.userStoryData });
+  }
+
+  deleteRequirementById(id: number) {
+    console.log(id);
+    console.log(this.get());
+    const userStoryData = { ...this.get() };
+    const newList = userStoryData.requirement.filter((item) => {
+      return item.id !== id;
+    });
+    userStoryData.requirement = [...newList];
+    this.set({ ...userStoryData });
+  }
+
+  createReq(newName: string) {
+    this.userStoryData.requirement.push({
+      id: Math.max.apply(Math, this.userStoryData.requirement.map(function (item) { return item.id; })) + 1,
+      name: newName
+    });
+    this.set({ ...this.userStoryData });
   }
 }

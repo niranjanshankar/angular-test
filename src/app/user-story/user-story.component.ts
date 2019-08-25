@@ -10,11 +10,21 @@ import { Observable } from 'rxjs';
 export class UserStoryComponent implements OnInit {
 
   public userStory$: Observable<UserStory>;
+  newReq: string;
 
   constructor(private userStoryService: UserStoryService) { }
 
   ngOnInit() {
     this.userStory$ = this.userStoryService.getUserStoryObservable();
+  }
+
+  public deleteRequirement(id: number): void {
+    this.userStoryService.deleteRequirementById(id);
+  }
+
+  createNew() {
+    console.log(this.newReq.trim());
+    this.userStoryService.createReq(this.newReq.trim());
   }
 
 }

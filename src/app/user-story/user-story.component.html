@@ -45,10 +45,10 @@
             <p>Use the input field below to create a new Requirement.</p>
             <form>
               <label for="req-name">Requirement</label>
-              <input type="text" id="req-name" placeholder="Enter Requirement">
+              <input name="req" type="text" id="req-name" [(ngModel)]="newReq" placeholder="Enter Requirement">
             </form>
             <div class="button-holder">
-                <button class="app-btn">Create</button>
+                <button (click)="createNew()" class="app-btn">Create</button>
             </div>
           </div>
 
@@ -64,9 +64,9 @@
 
           <ul>
             <li class="heading">Requirement</li>
-            <li *ngFor="let requirements of userStory.requirement">
+            <li *ngFor="let requirements of userStory.requirement; let i = index">
               <span>{{requirements.name}}</span>
-              <span class="delete">Delete</span>
+              <span class="delete" (click)="deleteRequirement(i)">Delete</span>
             </li>
           </ul>
         </div>
